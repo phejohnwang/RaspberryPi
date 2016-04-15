@@ -5,9 +5,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <iostream>
-
-using namespace std;
 
 #define BUFFER_SIZE 1024
 
@@ -17,7 +14,7 @@ int main()
 	int sock;
 	struct sockaddr_in server;
 	int mysock;
-	//char buff[1024];
+
 	char buff[BUFFER_SIZE];
 	int readSize;
 
@@ -43,7 +40,7 @@ int main()
 
 	/*Listen*/
 	listen(sock, 5);
-	cout << "Start Listening..." << endl;
+	printf("Start Listening...\n");
 
 	/*Accept*/
 	do
@@ -69,6 +66,7 @@ int main()
 					printf("Got the Message - Length:%d\n", readSize);
 					printf("Content: %s\n", buff);
 				}
+				bzero(buff, BUFFER_SIZE);
 			}
 			close(mysock);
 		}
