@@ -14,14 +14,6 @@ int main(int argc, char** argv)
 	int nRec = 0;
 	char buf[SIZE];
 
-	/* PINS configuration */
-
-	// pinMode (int pin, int mode) ; wiringpi pins numbers ==> view wiringPi pins table
-
-	//pinMode (15 , OUTPUT); //TxD UART
-	//pinMode (16 , INPUT); //RxD UART
-	// ...
-
 	//Initialization
 	if (wiringPiSetup() < 0)
 		perror("WiringPiSetup problem \n ");	
