@@ -53,6 +53,7 @@ int main()
 		else
 		{
 			bzero(buff, BUFFER_SIZE);
+			//shows whatever is received from client w/ length
 			while ((readSize = recv(mysock, buff, BUFFER_SIZE, 0)))
 			{
 				if (readSize < 0)
@@ -66,7 +67,7 @@ int main()
 					printf("Got the Message - Length:%d\n", readSize);
 					printf("Content: %s\n", buff);
 				}
-				bzero(buff, BUFFER_SIZE);
+				bzero(buff, BUFFER_SIZE);	//clear the buffer
 			}
 			close(mysock);
 		}
