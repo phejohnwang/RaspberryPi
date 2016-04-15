@@ -5,9 +5,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <iostream>
+
+using namespace std;
 
 #define BUFFER_SIZE 1024
-#define S_PORT 5555
 
 int main()
 {
@@ -15,7 +17,7 @@ int main()
 	int sock;
 	struct sockaddr_in server;
 	int mysock;
-
+	//char buff[1024];
 	char buff[BUFFER_SIZE];
 	int readSize;
 
@@ -30,7 +32,7 @@ int main()
 
 	server.sin_family = AF_INET;
 	server.sin_addr.s_addr = INADDR_ANY;
-	server.sin_port = htons(S_PORT);
+	server.sin_port = htons(5000);
 
 	/* Bind */
 	if (bind(sock, (struct sockaddr *)&server, sizeof(server)))
@@ -41,7 +43,7 @@ int main()
 
 	/*Listen*/
 	listen(sock, 5);
-	printf("Start Listening...\n");
+	cout << "Start Listening..." << endl;
 
 	/*Accept*/
 	do
@@ -54,7 +56,6 @@ int main()
 		else
 		{
 			bzero(buff, BUFFER_SIZE);
-			//Main Loop: show message received from client w/ length
 			while ((readSize = recv(mysock, buff, BUFFER_SIZE, 0)))
 			{
 				if (readSize < 0)
