@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 		//57600 is the Baud used
 		perror("device not opened \n");
 
-	while (true) {
+	while (1) {
 		scanf("%s",buf);
 		serialPuts(fd, buf); //Send message
 		printf("Sent Data: %s\n", buf);
