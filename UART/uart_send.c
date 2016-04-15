@@ -5,9 +5,6 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <iostream>
-
-using namespace std;
 
 int main(int argc, char** argv)
 {
@@ -23,7 +20,6 @@ int main(int argc, char** argv)
 		perror("device not opened \n");
 
 	while (true) {
-		cin >> buf;
 		serialPuts(fd, buf); //Send message
 		printf("Sent Data: %s\n", buf);
 	}
