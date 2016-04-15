@@ -23,7 +23,7 @@ int main(int argc, char** argv)
 		perror("device not opened \n");
 
 	bzero(buf, SIZE);
-	while (true) {
+	while (1) {
         nRec = read(fd, buf, SIZE);
         if (nRec == -1) {
             perror("Read Data Error!\n");
