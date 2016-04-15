@@ -20,6 +20,7 @@ int main(int argc, char** argv)
 		perror("device not opened \n");
 
 	while (true) {
+		scanf("%s",buf);
 		serialPuts(fd, buf); //Send message
 		printf("Sent Data: %s\n", buf);
 	}
