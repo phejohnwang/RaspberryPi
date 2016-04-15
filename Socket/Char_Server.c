@@ -5,9 +5,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <iostream>
-
-using namespace std;
 
 #define BUFFER_SIZE 1024
 #define S_PORT 5555
@@ -44,7 +41,7 @@ int main()
 
 	/*Listen*/
 	listen(sock, 5);
-	cout << "Start Listening..." << endl;
+	printf("Start Listening...\n");
 
 	/*Accept*/
 	do
